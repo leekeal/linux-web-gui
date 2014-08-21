@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app = 'desktop'>
+<head>
+<link rel="stylesheet" type="text/css" href="bower/font-awesome/css/font-awesome.css">
+	<title>Linux web desktop</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src='build/app.js'></script>
+</head>
+<body>
+
+	<div ng-controller = 'testCtrl'>
+		<h1>{{name}}</h1>
+		<button ng-click='events.test()'>test</button>
+	</div>
+
+	
+		<ng-include src="'desktop/views/folder.html'"></ng-include>
+</body>
+</html>

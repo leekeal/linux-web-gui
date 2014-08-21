@@ -1,0 +1,19 @@
+{
+  "name": "linux-web-desktop",
+  "version": "0.0.0",
+  "authors": [
+    "leeke <risyo520@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "socket.io-client": "https://github.com/Automattic/socket.io-client.git#~1.0.6",
+    "font-awesome": "~4.1.0"
+  }
+}

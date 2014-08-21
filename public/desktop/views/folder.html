@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" type="text/css" href="css/folder.css">
+<div class="container" ng-controller='folderCtrl'>
+	<div class="window">
+		<div class="title-bar">
+			{{currentPath}}
+			<i class="fa fa-times"></i>
+			<i class="fa fa-minus"></i>
+			<i class="fa fa-plus-circle"></i>
+		</div>
+		<div class="window-main">
+
+			<ul>
+			<li ng-click="events.openParent()">上级目录</li>
+				<li ng-repeat="item in list" ng-click = "events.open(item)">
+				<span ng-if="item.type == 'file' ">
+					<i class="fa fa-file-text-o"></i>
+				</span>
+				<span ng-if="item.type == 'directory' ">
+					<i class="fa fa-folder-o"></i>
+				</span>
+					{{item.filename}}
+					{{item.type}}
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<!-- <i class="fa fa-folder-o fa-4x"></i>
+				<i class="fa fa-folder-o fa-4x"></i>
+				<i class="fa fa-file-text-o fa-4x"></i>
+				<i class="fa fa-file-text-o fa-4x"></i> -->
