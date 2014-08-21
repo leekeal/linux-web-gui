@@ -16,7 +16,7 @@ var sockets = {};
 app.use(koa_nedb_session({
 	store:sessionDb,
 	key:'linux-desktop',
-	prefix:'',
+	prefix:'', 
 }));
 
 app.use(function *(next){
