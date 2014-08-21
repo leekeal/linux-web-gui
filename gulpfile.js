@@ -1,37 +1,82 @@
+var path = require('path');
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var livereload = require('gulp-livereload');
 var watch = require('gulp-watch');
+var compass = require('gulp-compass');
 
-var app = {
-	base:'./public/desktop/',
-	src:'./public/desktop/app.js',
-	dest:'./public/build/',
-	bower:'./public/bower/'
-}
-// Basic usage
+
+var publicPath = './public';
+var app = {};
+app.base    = path.join(publicPath,'linux-web-gui');
+app.css     = path.join(publicPath,'css');
+app.dest    = path.join(publicPath,'js');
+app.bower    = path.join(publicPath,'bower');
+
+app.src    = path.join(app.base,'app.js');
+app.styles    = path.join(app.base,'styles');
+app.templates    = path.join(app.base,'templates');
+
+
+
+/**
+* browserify 编译
+*/
+
 gulp.task('scripts', function() {
-    // Single entry point to browserify
     gulp.src(app.src)
     .pipe(browserify({
     	shim: { 
     		angular: {
-    			path: app.bower + './angular/angular.js',
+    			path: path.join(app.bower,'angular/angular.js'),
     			exports: 'angular'
     		},
         },
-        insertGlobals : true,
-        debug : !gulp.env.production
     }))
     .pipe(gulp.dest(app.dest))
 });
 
+
+
+/**
+* sass 编译
+*/
+gulp.task('styles', function() {
+    return gulp.src(app.styles + '/**/*.scss')
+    .pipe(compass({
+        config_file: 'public/config.rb',
+        css: app.css,
+        sass: app.styles,
+        image: path.join(app.css,'images')
+    }))
+    .pipe(gulp.dest(app.css));
+});
+
+
+
+/**
+* 默认任务
+*/
 gulp.task('default', function(){
 	gulp.run('scripts');
+    gulp.run('styles');
 
-   livereload.listen();
+    livereload.listen();
     // 监听文件变化
     gulp.watch(app.base + '/**/**/*.js', function(){
     	gulp.run('scripts');
+    })
+
+    gulp.watch(app.styles + '/**/*.scss', function(){
+        gulp.run('styles');
+    })
+
+    gulp.watch([
+        publicPath + '/index.html',
+        path.join(app.templates,'**/*.html'),
+        path.join(app.css,'linux-gui.css'),
+        path.join(app.dest,'*.js'),
+        ], function(){
     }).on('change', livereload.changed);
+
 });

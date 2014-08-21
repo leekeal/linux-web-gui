@@ -5,8 +5,8 @@ var router = require('koa-router');
 var Datastore = require('nedb');
 var wrap = require('co-nedb');
 
-var koa_nedb_session = require('./inits/koa-session-nedb');
-var sessionDb = new Datastore({ filename: 'stores/database.json',autoload: true });
+var koa_nedb_session = require('./server/inits/koa-session-nedb');
+var sessionDb = new Datastore({ filename: 'server/stores/database.json',autoload: true });
 var sessionDb = wrap(sessionDb);
 
 app.keys = ['asdfasdfas', 'asdfasdf'];
@@ -27,10 +27,10 @@ app.use(serve('./public'));
 app.use(router(app));
 
 var server = require('http').Server(app.callback());
-var io = require('./inits/socket')(server,sockets,sessionDb);
+var io = require('./server/inits/socket')(server,sockets,sessionDb);
 
 
-var folderHander = require('./socket-ctrls/folder-handler');
+var folderHander = require('./server/socket-ctrls/folder-handler');
 
 
 var fsSocket = io.of('/fs');
