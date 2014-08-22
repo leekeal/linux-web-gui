@@ -41,6 +41,7 @@ linuxGui.directive('screenDashboard',['$rootScope','$compile',function($rootScop
 
 
 linuxGui.controller('screenDashboardCtrl',['$scope','$compile','$element',function($scope,$compile,$element){
+	$scope.events = {}
 	$scope.events.createGuiInstance = function(){
 		var template = '<gui-instance></gui-instance>';
 		var content = $compile(template)($scope);

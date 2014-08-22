@@ -1,23 +1,25 @@
-<div class="gui-instance gui-screen gui-window" gui-draggable drag-by='.toolbar .middle' move-by=".toolbar .middle" >
+<div class="gui-instance gui-screen gui-window" ng-class="guiScreenFull  || null" gui-draggable drag-by='.toolbar .middle'>
 
 
 <!-- 工具栏 -->
-	<nav class="toolbar">
+	<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
 		<section class="left btn icon">
 			<i class="fa fa-circle-o"></i>
 		</section>
-		<section class="right btn icon" ng-click="fullscreenToggle()">
+		<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
 			<i class="fa fa-arrows-alt"></i>
 		</section>
 		<section class="middle">
-			Header is fullscreen? {{dialogMovabled}}
+			fwind.me
 		</section>
 	</nav>
 <!-- 工具栏 -->
 
 
 
-	<div class="desktop"></div>
+	<div class="desktop">
+		123
+	</div>
 
 
 	<!-- 任务栏 -->

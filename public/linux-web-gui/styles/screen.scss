@@ -17,9 +17,9 @@ body{
 .screen{
 	@include stretch;
 
+	
 	.screen-body{
 		@include stretch;
-		border: 1px solid red;
 		background: $screen-body-background;
 	}
 

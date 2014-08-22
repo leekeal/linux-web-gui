@@ -14,6 +14,7 @@ linuxGui.directive('guiDraggable',['$rootScope',function($rootScope) {
 
 			$(dragBy).on('mousedown',function(){
 				$scope.mousedown = true;
+				$element.css('transition','none');
 				
 			})
 
@@ -24,12 +25,12 @@ linuxGui.directive('guiDraggable',['$rootScope',function($rootScope) {
 				
 
 			})
-			$('.screen-body').on('mouseleave',function(event){
-				$scope.mousedown = false;
-				$scope.dragStart = false;
-				$scope.removeWatchMouseOffset();
+			// $('.screen-body').on('mouseleave',function(event){
+			// 	$scope.mousedown = false;
+			// 	$scope.dragStart = false;
+			// 	$scope.removeWatchMouseOffset();
 				
-			});
+			// });
 
 
 			$('.screen-body').on('mousemove',function(event){
