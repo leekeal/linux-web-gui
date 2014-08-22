@@ -9,9 +9,8 @@
 </head>
 <body>
 	<div class="screen">
-		<div class="screen-body" ng-controller="screenBodyCtrl">
-		</div>
-		<div class="screen-dashboard" ng-controller="screenDashboardCtrl" ng-include="tpl + 'screen-dashboard.html'"></div>
+		<div class="screen-body" ng-controller="screenBodyCtrl"></div>
+		<div class="screen-dashboard" ng-class="dashboardSwitch" ng-controller="screenDashboardCtrl" ng-include="tpl + 'screen-dashboard.html'"></div>
 	</div>
 </body>
 </html>
