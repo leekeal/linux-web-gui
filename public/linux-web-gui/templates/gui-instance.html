@@ -1,5 +1,26 @@
-<div class="screen">
-	<div class="desktop">
-	</div>
+<div class="gui-instance gui-screen gui-window" gui-draggable drag-by='.toolbar .middle' move-by=".toolbar .middle" >
+
+
+<!-- 工具栏 -->
+	<nav class="toolbar">
+		<section class="left btn icon">
+			<i class="fa fa-circle-o"></i>
+		</section>
+		<section class="right btn icon" ng-click="fullscreenToggle()">
+			<i class="fa fa-arrows-alt"></i>
+		</section>
+		<section class="middle">
+			Header is fullscreen? {{dialogMovabled}}
+		</section>
+	</nav>
+<!-- 工具栏 -->
+
+
+
+	<div class="desktop"></div>
+
+
+	<!-- 任务栏 -->
 	<div class="taskbar"></div>
+
 </div>

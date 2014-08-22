@@ -13,7 +13,6 @@
     "co-nedb": "^1.0.0",
     "cookie": "^0.1.2",
     "debug": "^1.0.4",
-    "jquery": "^2.1.1",
     "koa": "^0.10.0",
     "koa-generic-session": "^1.2.1",
     "koa-router": "^3.2.3",

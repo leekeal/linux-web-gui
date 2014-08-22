@@ -1,0 +1,39 @@
+/* line 1, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen {
+  position: fixed;
+  width: 400px;
+  height: 300px;
+  top: 30px;
+  left: 20%;
+  border: 1px solid #d7d7d7;
+  background-color: #fff;
+}
+
+/* line 12, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen .toolbar {
+  background: #f2f2f2;
+  border-bottom: 1px solid #d7d7d7;
+}
+/* line 15, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen .toolbar section {
+  padding: 8px;
+}
+/* line 18, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen .toolbar .left {
+  float: left;
+  border-right: 1px solid #d7d7d7;
+  border-top-right-radius: 0;
+}
+/* line 23, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen .toolbar .middle {
+  padding: 8px;
+  margin: 0 32px;
+}
+/* line 27, ../linux-web-gui/styles/gui-screen-desktop.scss */
+.gui-screen .toolbar .right {
+  float: right;
+  border-left: 1px solid #d7d7d7;
+  border-top-left-radius: 0;
+}
+
+/*# sourceMappingURL=gui-screen-desktop.css.map */

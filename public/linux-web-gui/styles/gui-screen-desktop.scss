@@ -1,0 +1,38 @@
+.gui-screen{
+	position: fixed;
+	width: 400px;
+	height: 300px;
+	top: 30px;
+	left: 20%;
+	border: 1px solid #d7d7d7;
+	background-color: #fff;
+}
+
+
+.gui-screen .toolbar{
+	background: #f2f2f2;
+	border-bottom: 1px solid #d7d7d7;
+	section {
+		padding: 8px;
+	}
+	.left {
+		float: left;
+		border-right: 1px solid #d7d7d7;
+		border-top-right-radius: 0;
+	}
+	.middle {
+		padding: 8px;
+		margin: 0 32px;
+	}
+	.right {
+		float: right;
+		border-left: 1px solid #d7d7d7;
+		border-top-left-radius: 0;
+	}
+}
+
+
+.gui-screen .taskbar{
+
+}
+
