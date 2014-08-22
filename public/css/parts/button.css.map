@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,MAAM;EACL,MAAM,EAAC,CAAC",
+"sources": ["../../linux-web-gui/styles/parts/button.scss"],
+"names": [],
+"file": "button.css"
+}
