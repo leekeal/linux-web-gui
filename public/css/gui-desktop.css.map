@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,aAAa;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,KAAK,EAAC,KAAK;EACX,MAAM,EAAC,KAAK;EACZ,UAAU,EAAC,MAAM",
+"sources": ["../linux-web-gui/styles/gui-desktop.scss"],
+"names": [],
+"file": "gui-desktop.css"
+}

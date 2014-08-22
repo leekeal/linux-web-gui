@@ -74,7 +74,7 @@ gulp.task('default', function(){
     gulp.watch([
         publicPath + '/index.html',
         path.join(app.templates,'**/*.html'),
-        path.join(app.css,'linux-gui.css'),
+        path.join(app.css,'**/*'),
         path.join(app.dest,'*.js'),
         ], function(){
     }).on('change', livereload.changed);
