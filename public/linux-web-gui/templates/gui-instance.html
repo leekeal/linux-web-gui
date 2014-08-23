@@ -1,5 +1,28 @@
-<div class="screen">
+<div class="gui-instance gui-screen gui-window" ng-class="guiScreenFull  || null" gui-draggable drag-by='.toolbar .middle'>
+
+
+<!-- 工具栏 -->
+	<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
+		<section class="left btn icon">
+			<i class="fa fa-circle-o"></i>
+		</section>
+		<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
+			<i class="fa fa-arrows-alt"></i>
+		</section>
+		<section class="middle">
+			fwind.me
+		</section>
+	</nav>
+<!-- 工具栏 -->
+
+
+
 	<div class="desktop">
+		123
 	</div>
+
+
+	<!-- 任务栏 -->
 	<div class="taskbar"></div>
+
 </div>

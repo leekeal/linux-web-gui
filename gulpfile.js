@@ -34,6 +34,7 @@ gulp.task('scripts', function() {
         },
     }))
     .pipe(gulp.dest(app.dest))
+    .pipe(livereload());
 });
 
 
@@ -49,7 +50,8 @@ gulp.task('styles', function() {
         sass: app.styles,
         image: path.join(app.css,'images')
     }))
-    .pipe(gulp.dest(app.css));
+    .pipe(gulp.dest(app.css))
+    .pipe(livereload());
 });
 
 
@@ -60,9 +62,7 @@ gulp.task('styles', function() {
 gulp.task('default', function(){
 	gulp.run('scripts');
     gulp.run('styles');
-
-    livereload.listen();
-    // 监听文件变化
+  
     gulp.watch(app.base + '/**/**/*.js', function(){
     	gulp.run('scripts');
     })
@@ -73,10 +73,8 @@ gulp.task('default', function(){
 
     gulp.watch([
         publicPath + '/index.html',
-        path.join(app.templates,'**/*.html'),
-        path.join(app.css,'**/*'),
-        path.join(app.dest,'*.js'),
-        ], function(){
-    }).on('change', livereload.changed);
+        path.join(app.templates,'**/*.html')
+        ],function(){
+        }).on('change',livereload.changed);
 
 });

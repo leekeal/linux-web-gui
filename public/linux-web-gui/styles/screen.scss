@@ -1,0 +1,74 @@
+@import "compass/reset";
+@import "compass/layout";
+@import "compass/css3";
+
+$screen-body-background:#62B4C1;
+$screen-dashboard-body-background:#9FC9C9;
+
+
+body{
+	overflow: hidden;
+	@include user-select(none);
+}
+
+/**
+*screen 
+*/
+.screen{
+	@include stretch;
+
+	
+	.screen-body{
+		@include stretch;
+		background: $screen-body-background;
+	}
+
+	.screen-dashboard{
+		@include stretch;
+		height: 100%;
+		width:200px;
+		transition:all 0.5s ease-in-out;
+	}
+
+	.screen-dashboard-open{
+		left:0px;
+	}
+
+	.screen-dashboard-close{
+		left:-200px;
+	}
+
+
+
+}
+
+
+/**
+* ------------------------------------ screen dashboard
+*/
+.screen .screen-dashboard{
+
+	.dashboard-switch{
+		position:relative;
+		left:30px;
+		float:right;
+		top:-55%;
+	}
+	.body{
+		@include opacity(0.3);
+		height:100%;
+		width:100%;
+		border:1px solid green;
+		background: $screen-dashboard-body-background;
+	}
+
+}
+
+// screen dashboard body
+.screen .screen-dashboard .body{
+	button.create-gui-instance{
+		width:100%;
+	}
+}
+
+

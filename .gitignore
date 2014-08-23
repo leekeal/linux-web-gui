@@ -1,3 +1,10 @@
 node_modules/*
 doc/*
 server/stores/*
+
+
+public/.sass-cache/*
+public/css/*
+public/js/*
+public/bower/*
+

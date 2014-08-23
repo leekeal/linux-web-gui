@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app = 'linuxGui'>
 <head>
+	<script type="text/javascript" src="bower/jquery/dist/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="bower/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/linux-gui.css">
 	<title>Linux web desktop</title>
@@ -9,7 +10,9 @@
 </head>
 <body>
 	<div class="screen">
-		<div class="screen-body" ng-controller="screenBodyCtrl"></div>
+		<div class="screen-body" ng-controller="screenBodyCtrl">
+			<gui-instance></gui-instance>
+		</div>
 		<div class="screen-dashboard" ng-class="dashboardSwitch" ng-controller="screenDashboardCtrl" ng-include="tpl + 'screen-dashboard.html'"></div>
 	</div>
 </body>
