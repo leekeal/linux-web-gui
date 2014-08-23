@@ -19,7 +19,7 @@ $resizable-handler-width:10px;
 		top: $resizable-handler-width;
 		left: $resizable-handler-width;
 		right: $resizable-handler-width;
-		background:black;
+		border:2px solid;
 	}
 
 	.gui-window-body{
@@ -116,4 +116,34 @@ $resizable-handler-width:10px;
 		cursor:se-resize;
 	}
 
+}
+
+
+/**
+* toolbar
+*/
+.gui-window .gui-window-header .toolbar{
+	background: #f2f2f2;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+.gui-window .gui-window-header .toolbar{
+
+	section {
+		padding: 8px;
+	}
+	.left {
+		float: left;
+		border-right: 1px solid #d7d7d7;
+		border-top-right-radius: 0;
+	}
+	.middle {
+		padding: 8px;
+		margin: 0 32px;
+	}
+	.right {
+		float: right;
+		border-left: 1px solid #d7d7d7;
+		border-top-left-radius: 0;
+	}
 }

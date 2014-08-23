@@ -1,38 +1,41 @@
-<gui-window gui-drag drag-in='.screen-body' drag-scope='false'>
-<div class="gui-instance gui-screen" ng-class="guiScreenFull || null">
+<gui-window>
+
+<gui-window-header>
+<!-- 工具栏 -->
+<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
+	<section class="left btn icon">
+		<i class="fa fa-circle-o"></i>
+	</section>
+	<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
+		<i class="fa fa-arrows-alt"></i>
+	</section>
+	<section class="middle">
+		fwind.me
+	</section>
+</nav>
+<!-- 工具栏 -->
+</gui-window-header>
 
 
-	<!-- 工具栏 -->
-	<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
-		<section class="left btn icon">
-			<i class="fa fa-circle-o"></i>
-		</section>
-		<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
-			<i class="fa fa-arrows-alt"></i>
-		</section>
-		<section class="middle">
-			fwind.me
-		</section>
-	</nav>
-	<!-- 工具栏 -->
+<div class="gui-window-body" >
+	<div class="gui-instance gui-screen" ng-class="guiScreenFull || null">
+		<div class="desktop">
+			<div class="icon-container">
 
+				<div class="icon" gui-drag>
+					<img class='icon-img' src="css/images/app-icons/computer.png"/>
+					<div>name</div>
+				</div>
 
-
-	<div class="desktop">
-		<div class="icon-container">
-
-			<div class="icon" gui-drag>
-				<img class='icon-img' src="css/images/app-icons/computer.png"/>
-				<div>name</div>
 			</div>
-
+			<!-- <div class="window-container"></div> -->
 		</div>
-		<!-- <div class="window-container"></div> -->
+
+
+		<!-- 任务栏 -->
+		<div class="taskbar"></div>
+
 	</div>
-
-
-	<!-- 任务栏 -->
-	<div class="taskbar"></div>
-
 </div>
+
 </gui-window>

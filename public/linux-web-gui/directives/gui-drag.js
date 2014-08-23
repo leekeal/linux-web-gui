@@ -16,7 +16,7 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 			}else{
 				var dragBy = $element;
 			}
-
+			console.log($element.html())
 			var dragIn = $scope.dragIn  || $element.parent();
 			dragIn = $(dragIn);
 
