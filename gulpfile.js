@@ -51,7 +51,7 @@ gulp.task('styles', function() {
         image: path.join(app.css,'images')
     }))
     .pipe(gulp.dest(app.css))
-    .pipe(livereload());
+    // .pipe(livereload());
 });
 
 
@@ -73,7 +73,8 @@ gulp.task('default', function(){
 
     gulp.watch([
         publicPath + '/index.html',
-        path.join(app.templates,'**/*.html')
+        path.join(app.templates,'**/*.html'),
+        path.join(app.css,'linux-gui.css')
         ],function(){
         }).on('change',livereload.changed);
 

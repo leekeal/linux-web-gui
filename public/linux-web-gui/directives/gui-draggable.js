@@ -5,42 +5,59 @@ linuxGui.directive('guiDraggable',['$rootScope',function($rootScope) {
 		restrict:'A',
 		scope:{
 			dragBy:'@',
+			dragIn:'@',
+			guiDraggable:'@'
 		},
 		link:function($scope,$element,$attrs){
+
+			
+
+
 			var dragBy = $element.find($scope.dragBy)
-	
+			var dragIn = $scope.dragIn =  $scope.dragIn || $element.parent();
 			dragBy.css("cursor", 'move');
 
 
-			$(dragBy).on('mousedown',function(){
+
+
+			$(dragBy).on('mousedown',function(event){
+				
+
+				if($scope.guiDraggable == 'false'){
+					return
+				}
+
 				$scope.mousedown = true;
 				$element.css('transition','none');
+
 				
 			})
 
-			$(dragBy).on('mouseup',function(){
+
+
+			$(document).on('mouseup',function(){
+
 				$scope.mousedown = false;
-				$scope.dragStart = false;
-				$scope.removeWatchMouseOffset();
-				
+	
 
+				if($scope.mousemove){
+		
+
+					$scope.mousemove = false;
+					$scope.removeWatchMouseOffset();
+				}
 			})
-			// $('.screen-body').on('mouseleave',function(event){
-			// 	$scope.mousedown = false;
-			// 	$scope.dragStart = false;
-			// 	$scope.removeWatchMouseOffset();
-				
-			// });
 
 
-			$('.screen-body').on('mousemove',function(event){
 
+			$(dragIn).on('mousemove',function(event){
 				if($scope.mousedown){
-					if(!$scope.dragStart){
+					// mousedown and mousemove both are true start to move
+					if(!$scope.mousemove){ 
 						$scope.removeWatchMouseOffset = $scope.$watch('mouseOffset',changePosition);
-						$scope.dragStart = true;
+						$scope.mousemove = true;
 					}
-
+			
 					$scope.mouseOffset = {top: event.clientY, left: event.clientX};
 					$scope.$apply();
 				}
@@ -49,15 +66,15 @@ linuxGui.directive('guiDraggable',['$rootScope',function($rootScope) {
 
 
 
-
 			function changePosition(nValue,oValue){
+
 				if(!nValue || !oValue) return;
-				var offset = $element.offset();
+				var offset = $element.position();
 				$element.css('left',offset.left + (nValue.left - oValue.left))
 				$element.css('top',offset.top + (nValue.top - oValue.top))
 			};
 
-		},
+		},/*-  link -*/
 	};
 }]);
 

@@ -2,6 +2,7 @@ var linuxGui = require('../linux-gui');
 
 
 
+
 linuxGui.directive('screen',['$rootScope','$compile',function($rootScope,$compile) {
 	return {
 		restrict: 'C',
@@ -22,15 +23,6 @@ linuxGui.directive('screenDashboard',['$rootScope','$compile',function($rootScop
 		restrict: 'C',
 		scope:true,
 		link:function(scope,element,attrs){
-
-			// 开启状态，始终显示在最前面
-			scope.$watch('options.zIndex',function(nValue){
-				if(scope.dashboardSwitch == "screen-dashboard-open"){
-					var zIndex = 	scope.options.zIndex + 1
-					element.css('z-index',zIndex)
-				}
-			})
-
 
 
 		}

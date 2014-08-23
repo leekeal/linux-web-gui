@@ -1,0 +1,119 @@
+@import "compass/css3";
+
+
+$resizable-handler-width:10px;
+
+.gui-window{
+	width: 600px;
+	height: 400px;
+
+	position: absolute;
+	border:2px solid;
+
+	left: 100px;
+	top: 50px;
+
+	.gui-window-header{
+		position: absolute;
+		height: 32px;
+		top: $resizable-handler-width;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background:black;
+	}
+
+	.gui-window-body{
+		position: absolute;
+		top: 32px + $resizable-handler-width;
+		bottom: 32px + $resizable-handler-width;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: #D64CA1;
+		/*@include opacity(0.1);*/
+	} 
+
+	.gui-window-footer{
+		position: absolute;
+		height: 32px;
+		bottom: $resizable-handler-width;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: black;
+	}
+
+	.gui-resizable-handler-up{
+		position: absolute;
+		height: $resizable-handler-width;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: #2981A9;
+		cursor:n-resize;
+	}
+
+	.gui-resizable-handler-down{
+		position: absolute;
+		height: $resizable-handler-width;
+		bottom: 0;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: #2981A9;
+		cursor:s-resize;
+	}
+
+	.gui-resizable-handler-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		top:$resizable-handler-width;
+		bottom:$resizable-handler-width;
+		left: 0;
+		background: #698E29;
+		cursor:w-resize;
+	}
+
+	.gui-resizable-handler-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		top:$resizable-handler-width;
+		bottom:$resizable-handler-width;
+		right: 0;
+		background: #698E29;
+		cursor:e-resize;
+	}
+
+	.gui-resizable-handler-up-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		background: #CE2FA1;
+		cursor:nw-resize;
+	}
+
+	.gui-resizable-handler-up-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		right: 0;
+		background: #CE2FA1;
+		cursor:ne-resize;
+	}
+
+	.gui-resizable-handler-down-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		bottom: 0;
+		background: #CE2FA1;
+		cursor:sw-resize;
+	}
+
+	.gui-resizable-handler-down-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		bottom: 0;
+		right: 0;
+		background: #CE2FA1;
+		cursor:se-resize;
+	}
+
+}

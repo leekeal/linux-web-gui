@@ -21,6 +21,8 @@ body{
 	.screen-body{
 		@include stretch;
 		background: $screen-body-background;
+		z-index: 0;
+
 	}
 
 	.screen-dashboard{
@@ -28,6 +30,8 @@ body{
 		height: 100%;
 		width:200px;
 		transition:all 0.5s ease-in-out;
+		z-index: 1;
+
 	}
 
 	.screen-dashboard-open{
@@ -53,7 +57,13 @@ body{
 		left:30px;
 		float:right;
 		top:-55%;
+		
+
+		.fa{
+			@include opacity(0.3);
+		}
 	}
+
 	.body{
 		@include opacity(0.3);
 		height:100%;

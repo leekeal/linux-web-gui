@@ -16,7 +16,7 @@
     "socket.io-client": "https://github.com/Automattic/socket.io-client.git#~1.0.6",
     "font-awesome": "~4.1.0",
     "jquery": "~2.1.1",
-    "angular": "~1.2.22",
+    "angular": "~1.2.23",
     "zepto": "~1.1.4"
   }
 }

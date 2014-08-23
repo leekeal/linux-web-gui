@@ -1,12 +1,28 @@
 var linuxGui = require('../linux-gui');
+
+
+/**
+*Gui instance
+*/
 linuxGui.directive('guiInstance',['$rootScope',function($rootScope) {
 	return {
 		restrict: 'E',
 		templateUrl: $rootScope.tpl + 'gui-instance.html',
 		scope:true,
-		replace:true,
+		// replace:true,
 		controller:'guiInstanceCtrl',
-		link:function(scope){
+		link:function(scope,element){
+
+			var screenOptions = scope.$parent.options;
+			element.mousedown(function(){
+				// 如果点的是自己，就不增加z-index
+				if(screenOptions.zIndex == element.css('z-index')){
+					return;
+				}
+				screenOptions.zIndex++;
+				element.css('z-index',screenOptions.zIndex);
+			})
+
 		}
 	};
 }]);
@@ -19,6 +35,7 @@ linuxGui.controller('guiInstanceCtrl',['$scope','$element',function($scope,$elem
 	var options = $scope.options = {};
 
 	events.fullscreenToggle = function(){
+
 
 		if(!$scope.guiScreenFull){
 			options.offset = $element.offset();
@@ -44,7 +61,9 @@ linuxGui.controller('guiInstanceCtrl',['$scope','$element',function($scope,$elem
 
 
 
-
+/**
+*Gui desktop toolbar
+*/
 
 linuxGui.controller('guiDesktopToolbarCtrl',['$scope',function($scope){
 	var events = $scope.events = {}
