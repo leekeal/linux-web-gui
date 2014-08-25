@@ -6,14 +6,14 @@ linuxGui.directive('guiWindow',['$rootScope','$compile',function($rootScope,$com
 		replace:true,
 		transclude : 'element',
 		link:function(scope,element,attrs,ctrl,transclude){
-			var content = transclude();
-			var header = content.find('.gui-window-header-body');
-			header = $compile(header)(scope);
-			$(element).find('.gui-window-header').append(header)
+			// var content = transclude();
+			// var header = content.find('.gui-window-header-body');
+			// header = $compile(header)(scope);
+			// $(element).find('.gui-window-header').append(header)
 
-			var body = content.find('.gui-window-body');
-			body = $compile(body)(scope);
-			$(element).append(body)
+			// var body = content.find('.gui-window-body');
+			// body = $compile(body)(scope);
+			// $(element).append(body)
 
 		}
 	};

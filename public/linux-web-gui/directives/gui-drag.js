@@ -1,5 +1,7 @@
 var linuxGui = require('../linux-gui');
-
+/*
+* drag move范围外鼠标移动，跟随移动，但不出范围，待实现.
+*/
 linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 	return {
 		restrict:'A',
@@ -7,6 +9,7 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 			dragBy:'@',
 			dragIn:'@',
 			dragScope:'@',
+			// dragMove:'@', 
 		},
 		link:function($scope,$element,$attrs){
 
@@ -16,9 +19,14 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 			}else{
 				var dragBy = $element;
 			}
-			console.log($element.html())
+			
 			var dragIn = $scope.dragIn  || $element.parent();
+
+			// var dragMove = $scope.dragMove || dragIn;
+			// dragMove = $(dragMove);
+
 			dragIn = $(dragIn);
+	
 
 			var dragScope = $scope.dragScope || true;
 			var mousedown = false;
@@ -58,12 +66,15 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 				var left = position.left + (offset.left - oldOffset.left);
 				var top = position.top + (offset.top - oldOffset.top);
 
-				console.log(dragScope)
 				// 范围限定在 dragIn之内
 				if(dragScope == true){
 					if(left < 0 || top < 0 || left+$element.width() > dragIn.width() || top+$element.height() > dragIn.height()){
 						return;
 					}
+					// left = left < 0 ? 0 : left;
+					// top = top < 0 ? 0 : top; 
+					// left = left+$element.width() > dragIn.width() ? dragIn.width() - $element.width() : left; 
+					// top = top+$element.height() > dragIn.height() ? dragIn.height() - $element.height() : top;
 				}
 
 

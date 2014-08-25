@@ -1,0 +1,87 @@
+$resizable-handler-width:6px;
+$resizable-handler-background:#f2f2f2;
+.gui-resizable{
+	.gui-resizable-body{
+		position:absolute;
+		margin:$resizable-handler-width;
+		bottom:0;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.gui-resizable-handler-up{
+		position: absolute;
+		height: $resizable-handler-width;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: #2981A9;
+		cursor:n-resize;
+	}
+
+	.gui-resizable-handler-down{
+		position: absolute;
+		height: $resizable-handler-width;
+		bottom: 0;
+		left: $resizable-handler-width;
+		right: $resizable-handler-width;
+		background: #2981A9;
+		cursor:s-resize;
+	}
+
+	.gui-resizable-handler-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		top:$resizable-handler-width;
+		bottom:$resizable-handler-width;
+		left: 0;
+		background: #698E29;
+		cursor:w-resize;
+	}
+
+	.gui-resizable-handler-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		top:$resizable-handler-width;
+		bottom:$resizable-handler-width;
+		right: 0;
+		background: #698E29;
+		cursor:e-resize;
+	}
+
+	.gui-resizable-handler-up-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		background: #CE2FA1;
+		cursor:nw-resize;
+	}
+
+	.gui-resizable-handler-up-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		right: 0;
+		background: #CE2FA1;
+		cursor:ne-resize;
+	}
+
+	.gui-resizable-handler-down-left{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		bottom: 0;
+		background: #CE2FA1;
+		cursor:sw-resize;
+	}
+
+	.gui-resizable-handler-down-right{
+		position: absolute;
+		width:$resizable-handler-width;
+		height: $resizable-handler-width;
+		bottom: 0;
+		right: 0;
+		background: #CE2FA1;
+		cursor:se-resize;
+	}
+}

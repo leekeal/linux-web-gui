@@ -1,20 +1,20 @@
 <gui-window>
-
-<gui-window-header>
-<!-- 工具栏 -->
-<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
-	<section class="left btn icon">
-		<i class="fa fa-circle-o"></i>
-	</section>
-	<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
-		<i class="fa fa-arrows-alt"></i>
-	</section>
-	<section class="middle">
-		fwind.me
-	</section>
-</nav>
-<!-- 工具栏 -->
-</gui-window-header>
+<gui-resizable>
+<div class="gui-window-header">
+	<!-- 工具栏 -->
+	<nav class="toolbar" ng-controller='guiDesktopToolbarCtrl'>
+		<section class="left btn icon">
+			<i class="fa fa-circle-o"></i>
+		</section>
+		<section class="right btn icon" ng-click="$parent.events.fullscreenToggle()">
+			<i class="fa fa-arrows-alt"></i>
+		</section>
+		<section class="middle">
+			fwind.me
+		</section>
+	</nav>
+	<!-- 工具栏 -->
+</div>
 
 
 <div class="gui-window-body" >
@@ -22,7 +22,7 @@
 		<div class="desktop">
 			<div class="icon-container">
 
-				<div class="icon" gui-drag>
+				<div class="icon" gui-drag drag-move='.screen-body'>
 					<img class='icon-img' src="css/images/app-icons/computer.png"/>
 					<div>name</div>
 				</div>
@@ -37,5 +37,6 @@
 
 	</div>
 </div>
-
+<div class="gui-window-footer">footer</div>
+</gui-resizable >
 </gui-window>
