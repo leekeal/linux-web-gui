@@ -39,27 +39,6 @@ linuxGui.directive('guiResizable',['$rootScope','$compile',function($rootScope,$
 				change.width = offset.left - oldOffset.left;
 				change.height = offset.top - oldOffset.top;
 				oldOffset = offset;
-				// if(direction == 'up') up(change);
-				// else if(direction == 'down') down(change);
-				// else if(direction == 'left') left(change);
-				// else if(direction == 'right') right(change);
-				// else if(direction == 'up-left'){
-				// 	up(change);
-				// 	left(change);
-				// }
-				// else if(direction == 'up-right') {
-				// 	up(change);
-				// 	right(change);
-
-				// }
-				// else if(direction == 'down-left'){
-				// 	down(change);
-				// 	left(change);
-				// }
-				// else if(direction == 'down-right'){
-				// 	down(change);
-				// 	right(change);
-				// }
 
 				if(direction.length == 2){
 					resizeHandler[direction[0]](parent,change);
