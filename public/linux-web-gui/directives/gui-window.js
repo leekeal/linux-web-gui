@@ -4,7 +4,7 @@ linuxGui.directive('guiWindow',['$rootScope','$compile',function($rootScope,$com
 		restrict: 'E',
 		templateUrl:$rootScope.tpl + 'gui-window.html',
 		replace:true,
-		transclude : 'element',
+		transclude : true,
 		link:function(scope,element,attrs,ctrl,transclude){
 			// var content = transclude();
 			// var header = content.find('.gui-window-header-body');

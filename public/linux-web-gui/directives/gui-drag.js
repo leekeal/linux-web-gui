@@ -34,7 +34,7 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 
 
 			dragBy.mousedown(function(){
-				console.log('mousedown')
+				
 				mousedown = true;
 				$element.css('transition','none');
 				dragBy.css("cursor", 'move');
@@ -43,7 +43,7 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 
 
 			$(document).mouseup(function(){
-				console.log('mouseup')
+				
 
 				mousedown = false;
 				oldOffset = null;
