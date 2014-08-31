@@ -1,5 +1,9 @@
+@import "compass/css3";
 $resizable-handler-width:6px;
+$resizable-handler-oblique-angle-size:12px;
 $resizable-handler-background:#f2f2f2;
+$resizable-handler-border-radius:2px;
+$resizable-handler-background-color:#f2f2f2;
 .gui-resizable{
 	.gui-resizable-body{
 		position:absolute;
@@ -8,14 +12,19 @@ $resizable-handler-background:#f2f2f2;
 		top: 0;
 		left: 0;
 		right: 0;
+		z-index: 1;
+	}
+
+	.gui-resizable-handler{
+		z-index: 0;
+		background:$resizable-handler-background-color;
 	}
 
 	.gui-resizable-handler-up{
 		position: absolute;
 		height: $resizable-handler-width;
-		left: $resizable-handler-width;
-		right: $resizable-handler-width;
-		background: #2981A9;
+		left: $resizable-handler-oblique-angle-size;
+		right: $resizable-handler-oblique-angle-size;
 		cursor:n-resize;
 	}
 
@@ -23,65 +32,62 @@ $resizable-handler-background:#f2f2f2;
 		position: absolute;
 		height: $resizable-handler-width;
 		bottom: 0;
-		left: $resizable-handler-width;
-		right: $resizable-handler-width;
-		background: #2981A9;
+		left: $resizable-handler-oblique-angle-size;
+		right: $resizable-handler-oblique-angle-size;
 		cursor:s-resize;
 	}
 
 	.gui-resizable-handler-left{
 		position: absolute;
 		width:$resizable-handler-width;
-		top:$resizable-handler-width;
-		bottom:$resizable-handler-width;
+		top:$resizable-handler-oblique-angle-size;
+		bottom:$resizable-handler-oblique-angle-size;
 		left: 0;
-		background: #698E29;
 		cursor:w-resize;
 	}
 
 	.gui-resizable-handler-right{
 		position: absolute;
 		width:$resizable-handler-width;
-		top:$resizable-handler-width;
-		bottom:$resizable-handler-width;
+		top:$resizable-handler-oblique-angle-size;
+		bottom:$resizable-handler-oblique-angle-size;
 		right: 0;
-		background: #698E29;
 		cursor:e-resize;
 	}
 
 	.gui-resizable-handler-up-left{
+		@include border-radius($resizable-handler-border-radius);
 		position: absolute;
-		width:$resizable-handler-width;
-		height: $resizable-handler-width;
-		background: #CE2FA1;
+		width:$resizable-handler-oblique-angle-size;
+		height: $resizable-handler-oblique-angle-size;
 		cursor:nw-resize;
 	}
 
 	.gui-resizable-handler-up-right{
+		@include border-radius($resizable-handler-border-radius);
 		position: absolute;
-		width:$resizable-handler-width;
-		height: $resizable-handler-width;
+		width:$resizable-handler-oblique-angle-size;
+		height: $resizable-handler-oblique-angle-size;
 		right: 0;
-		background: #CE2FA1;
 		cursor:ne-resize;
 	}
 
 	.gui-resizable-handler-down-left{
+		@include border-radius($resizable-handler-border-radius);
 		position: absolute;
-		width:$resizable-handler-width;
-		height: $resizable-handler-width;
+		width:$resizable-handler-oblique-angle-size;
+		height: $resizable-handler-oblique-angle-size;
 		bottom: 0;
-		background: #CE2FA1;
 		cursor:sw-resize;
 	}
 
 	.gui-resizable-handler-down-right{
+		@include border-radius($resizable-handler-border-radius);
 		position: absolute;
-		width:$resizable-handler-width;
-		height: $resizable-handler-width;
+		width:$resizable-handler-oblique-angle-size;
+		height: $resizable-handler-oblique-angle-size;
 		bottom: 0;
 		right: 0;
-		background: #CE2FA1;
 		cursor:se-resize;
 	}
 }

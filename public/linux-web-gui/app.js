@@ -17,6 +17,7 @@ require('./directives/gui-instance');
 require('./directives/gui-window');
 require('./directives/gui-drag');
 require('./directives/gui-resizable');
+require('./directives/gui-resize-reposition');
 
 
 // load controllers

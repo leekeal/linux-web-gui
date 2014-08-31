@@ -8,11 +8,28 @@ linuxGui.directive('screen',['$rootScope','$compile',function($rootScope,$compil
 		restrict: 'C',
 		scope:true,
 		link:function(scope,element,attrs){
+		}
+	};
+}]);
+
+/*-------  
+screen body 
+-------*/
+linuxGui.directive('screenBody',['$rootScope','$compile',function($rootScope,$compile) {
+	return {
+		restrict: 'C',
+		scope:true,
+		link:function(scope,element,attrs){
 			scope.options = {} 
 			scope.options.zIndex = 0;
 		}
 	};
 }]);
+
+
+linuxGui.controller('screenBodyCtrl',['$scope','$compile','$element',function($scope,$compile,$element){
+}])
+
 
 
 /*-------  
@@ -53,11 +70,6 @@ linuxGui.controller('screenDashboardCtrl',['$scope','$compile','$element',functi
 
 
 
-/*-------  
-screen body 
--------*/
-linuxGui.controller('screenBodyCtrl',['$scope','$compile','$element',function($scope,$compile,$element){
-}])
 
 
 

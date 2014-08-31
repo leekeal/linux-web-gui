@@ -8,14 +8,12 @@ linuxGui.directive('guiResizable',['$rootScope','$compile',function($rootScope,$
 		link:function(scope,element,attrs,ctrl,transclude){
 
 			var parent = element.parent();
-
 			var handlers = element.find('.gui-resizable-handler');
 
 			var direction = null;
 			var oldOffset = null;
 			handlers.mousedown(function(event){
 				direction = $(event.target).attr('direction').split('-');
-				console.log(direction)
 			})
 
 			$(document).mouseup(function(event){
@@ -25,11 +23,10 @@ linuxGui.directive('guiResizable',['$rootScope','$compile',function($rootScope,$
 
 			
 			$(document).mousemove(function(event){
+				
+				if(!direction) return;
 
-				if(!direction) return
-
-
-					var offset = {top: event.clientY, left: event.clientX};
+				var offset = {top: event.clientY, left: event.clientX};
 				if(!oldOffset){
 					oldOffset = offset;
 					return ;
@@ -48,8 +45,6 @@ linuxGui.directive('guiResizable',['$rootScope','$compile',function($rootScope,$
 				}
 
 			})
-
-
 			
 
 
@@ -83,3 +78,6 @@ resizeHandler.left = function(target,change){
 resizeHandler.right = function(target,change){
 	target.width(target.width() + change.width);
 }
+
+
+

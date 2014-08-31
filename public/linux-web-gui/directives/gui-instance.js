@@ -9,19 +9,10 @@ linuxGui.directive('guiInstance',['$rootScope',function($rootScope) {
 		restrict: 'E',
 		templateUrl: $rootScope.tpl + 'gui-instance.html',
 		scope:true,
-		// replace:true,
+		replace:true,
 		controller:'guiInstanceCtrl',
 		link:function(scope,element){
 
-			var screenOptions = scope.$parent.options;
-			element.mousedown(function(){
-				// 如果点的是自己，就不增加z-index
-				if(screenOptions.zIndex == element.css('z-index')){
-					return;
-				}
-				screenOptions.zIndex++;
-				element.css('z-index',screenOptions.zIndex);
-			})
 
 		}
 	};

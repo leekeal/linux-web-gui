@@ -20,7 +20,7 @@ linuxGui.directive('guiDrag',['$rootScope',function($rootScope) {
 				var dragBy = $element;
 			}
 			
-			var dragIn = $scope.dragIn  || $element.parent();
+			var dragIn = $scope.dragIn  || $element.offsetParent();
 
 			// var dragMove = $scope.dragMove || dragIn;
 			// dragMove = $(dragMove);
