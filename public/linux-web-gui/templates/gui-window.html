@@ -1,3 +1,6 @@
-<div class="gui-window" gui-drag drag-in='.screen-body' drag-by='.gui-window-header' drag-scope='false' ng-transclude>
-
+<div class="gui-window">
+<gui-resizable></gui-resizable>
+<div class="gui-window-content gui-resizable-body" ng-transclude></div>
+<!-- gui-drag 如果依赖window以外的部件drag-by，必须让其他部件先生成最后执行gui-drag指令 所以这里必须在gui-window-header生成之后才能执行gui-drag -->
+<gui-drag  drag-in='.screen-body' drag-by='.gui-window-header' drag-scope='false'></gui-drag>
 </div>

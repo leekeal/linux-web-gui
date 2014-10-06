@@ -11,10 +11,13 @@
 <body>
 	<div class="screen">
 		<div class="screen-body">
-			<gui-instance></gui-instance>
+
+		<gui-window-container> 
+			<gui-window><gui-instance></gui-instance></gui-window>
+		</gui-window-container>
+		
 		</div>
 		<div class="screen-dashboard" ng-class="dashboardSwitch" ng-controller="screenDashboardCtrl" ng-include="tpl + 'screen-dashboard.html'">
-		
 		</div>
 	</div>
 </body>

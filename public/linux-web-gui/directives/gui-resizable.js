@@ -6,7 +6,7 @@ linuxGui.directive('guiResizable',['$rootScope','$compile',function($rootScope,$
 		replace:true,
 		transclude : true,
 		link:function(scope,element,attrs,ctrl,transclude){
-
+			console.log('guiResizable')
 			var parent = element.parent();
 			var handlers = element.find('.gui-resizable-handler');
 

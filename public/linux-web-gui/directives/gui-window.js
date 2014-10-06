@@ -1,13 +1,31 @@
 var linuxGui = require('../linux-gui');
+
+
+linuxGui.directive('guiWindowContainer',[function(){
+	return {
+		restrict: 'E',
+		template:'<div class="gui-window-container" ng-transclude></div>',
+		scope:true,
+		replace:true,
+		transclude : true,
+		link:function(scope){
+			scope.name = 'guiWindowContainer';
+			console.log('guiWindowContainer')
+		}
+	}
+}])
+
+
 linuxGui.directive('guiWindow',['$rootScope','$compile',function($rootScope,$compile) {
 	return {
 		restrict: 'E',
 		templateUrl:$rootScope.tpl + 'gui-window.html',
 		replace:true,
 		transclude : true,
+		scope:true,
 		link:function(scope,element,attrs,ctrl,transclude){
-
-
+			console.log('guiWindow')
+			scope.name = 'guiWindow';
 
 			/*处理显示顺序*/
 			var screenOptions = element.offsetParent().scope().options;
@@ -33,13 +51,13 @@ linuxGui.directive('guiWindow',['$rootScope','$compile',function($rootScope,$com
 	};
 }]);
 
-linuxGui.directive('guiWindowHeader',['$rootScope',function($rootScope) {
-	return {
-		restrict: 'E',
-		templateUrl:$rootScope.tpl + 'gui-window-header.html',
-		replace:true,
-		transclude : true,
-		link:function(scope,element,attrs){
-		}
-	};
-}]);
+// linuxGui.directive('guiWindowHeader',['$rootScope',function($rootScope) {
+// 	return {
+// 		restrict: 'E',
+// 		templateUrl:$rootScope.tpl + 'gui-window-header.html',
+// 		replace:true,
+// 		transclude : true,
+// 		link:function(scope,element,attrs){
+// 		}
+// 	};
+// }]);

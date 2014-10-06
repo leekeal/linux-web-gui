@@ -4,16 +4,18 @@ $resizable-handler-oblique-angle-size:12px;
 $resizable-handler-background:#f2f2f2;
 $resizable-handler-border-radius:2px;
 $resizable-handler-background-color:#f2f2f2;
+
+.gui-resizable-body{
+	position:absolute;
+	margin:$resizable-handler-width;
+	bottom:0;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
 .gui-resizable{
-	.gui-resizable-body{
-		position:absolute;
-		margin:$resizable-handler-width;
-		bottom:0;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-	}
 
 	.gui-resizable-handler{
 		z-index: 0;

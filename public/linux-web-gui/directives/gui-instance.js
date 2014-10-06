@@ -12,7 +12,7 @@ linuxGui.directive('guiInstance',['$rootScope',function($rootScope) {
 		replace:true,
 		controller:'guiInstanceCtrl',
 		link:function(scope,element){
-
+			console.log('guiInstance')
 
 		}
 	};

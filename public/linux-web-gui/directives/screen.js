@@ -1,20 +1,8 @@
 var linuxGui = require('../linux-gui');
 
-
-
-
-linuxGui.directive('screen',['$rootScope','$compile',function($rootScope,$compile) {
-	return {
-		restrict: 'C',
-		scope:true,
-		link:function(scope,element,attrs){
-		}
-	};
-}]);
-
-/*-------  
-screen body 
--------*/
+// /*-------  
+// screen body 
+// -------*/
 linuxGui.directive('screenBody',['$rootScope','$compile',function($rootScope,$compile) {
 	return {
 		restrict: 'C',
@@ -27,24 +15,22 @@ linuxGui.directive('screenBody',['$rootScope','$compile',function($rootScope,$co
 }]);
 
 
-linuxGui.controller('screenBodyCtrl',['$scope','$compile','$element',function($scope,$compile,$element){
-}])
+
+// /*-------  
+// screen dashboard 
+// -------*/
 
 
-
-/*-------  
-screen dashboard 
--------*/
-linuxGui.directive('screenDashboard',['$rootScope','$compile',function($rootScope,$compile) {
-	return {
-		restrict: 'C',
-		scope:true,
-		link:function(scope,element,attrs){
+// linuxGui.directive('screenDashboard',['$rootScope','$compile',function($rootScope,$compile) {
+// 	return {
+// 		restrict: 'C',
+// 		scope:true,
+// 		link:function(scope,element,attrs){
 
 
-		}
-	};
-}]);
+// 		}
+// 	};
+// }]);
 
 
 

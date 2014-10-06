@@ -9,7 +9,7 @@ linuxGui.directive('guiResizeReposition',['$rootScope','$compile',function($root
 		scope:false,
 		link:function(scope,element,attrs){
 			var relative = element.offsetParent();
-			console.log(relative.scope().__height)
+		
 			scope.relative = {
 				width:relative.width(),
 				height:relative.height()
